@@ -24,7 +24,7 @@ print("\n")
 
 def sobrescribir(base, archivo):
     directorio = Path(base, archivo)
-    ruta = open(directorio, "a")
+    ruta = open(directorio, "w")
 
     ruta.write("contenido eliminado")
 
@@ -41,7 +41,13 @@ print(sobrescribir(ruta_base, "open.txt"))
 print("\n")
 
 
+def registro_error(base, archivo):
+    directorio = Path(base, archivo)
+    with open(directorio, "a") as ruta:
+        ruta.write("\nSe a encontrado un error")
+    texto = directorio.read_text() 
+    return texto 
 
 
-
+print(registro_error(ruta_base, "open.txt"))
 
