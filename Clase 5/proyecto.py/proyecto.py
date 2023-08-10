@@ -166,6 +166,7 @@ def validar_letra(letra, letras_usuario):
         letras_usuario.append(letra)
         return
 
+
 def validar_victoria(letras_usuario, palabra_alazar):
     palabra_formada = ""
     for p in palabra_alazar:
