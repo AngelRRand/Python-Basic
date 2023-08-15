@@ -96,7 +96,7 @@ def validar_opcion():
     opcion = input(mensaje)
     
     while opcion.lower() not in opciones:
-        mensajes_consola("No puedes ingresar este valor. Por favor vuelve a intentarlo")
+        mensajes_consola("No puedes ingresar este valor. Por favor vuelve a intentarloooo")
         opcion = input(mensaje)
     else:
         return opcion.lower()
