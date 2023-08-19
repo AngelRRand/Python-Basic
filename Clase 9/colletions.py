@@ -13,5 +13,12 @@ print(contador)
 print("\n")
 
 
+
+mi_diccionario = defaultdict(lambda: "No encontrado")
+mi_diccionario["edad"]  = 44
+print(mi_diccionario["nombre"])
+
+print(mi_diccionario)
+
 """ Ejercicio 3 """
 print("\n")
