@@ -110,7 +110,6 @@ letras_usuario = []
 vidas = 6
 
 print("\n")
-print(palabra_alazar)
 
 print("Bienvenido! Vamos a jugar al ahorcado.")
 
@@ -146,7 +145,9 @@ def dibujo_print(letras_usuario, palabra_alazar):
             muestra.append(p)
         else:
             muestra.append("_")
+            
     resultado = " ".join(muestra)
+
     print("\n")
     print(resultado)
     print("\n")

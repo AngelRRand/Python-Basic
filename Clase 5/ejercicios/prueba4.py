@@ -11,8 +11,20 @@ def contar_primos(num):
         else:
             count += 1
             lis.append(n)
-    print(count)
-    print(lis)
 
 contar_primos(20)
 
+def contar_primos(num):
+    primos = [2]
+    iteracion = 3
+    if num <2:
+        return 0
+    while iteracion <=0:
+        for n in range(3,iteracion,2):
+            if iteracion %n ==0:
+                iteracion +=2
+                break
+        else:
+            primos.append(iteracion)
+            iteracion +=2
+    return len(primos)
