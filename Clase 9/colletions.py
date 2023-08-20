@@ -1,5 +1,6 @@
 from collections import defaultdict
 from collections import Counter
+from collections import deque
 
 """ Ejercicio 1 """
 print("\n")
@@ -22,3 +23,8 @@ print(mi_diccionario)
 
 """ Ejercicio 3 """
 print("\n")
+my_deque = deque(["Londres", "Berlin", "París", "Madrid", "Roma", "Moscú"])
+
+my_deque.appendleft("HoracioLand")
+
+print(my_deque)
