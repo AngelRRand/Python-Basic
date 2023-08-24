@@ -7,15 +7,10 @@ Fecha de búsqueda: {dia}
     -------		----------
 """
     print(ticket)
-
-    for dic in lista:
-
-        for t, a in dic.items():
+    for t, a in lista:
             print(f"""
     {t}      {a}
 """)
-
-
     ticketTop = f"""
 Números encontrados: {count}
 Duración de la búsqueda: {tiempo} segundos
