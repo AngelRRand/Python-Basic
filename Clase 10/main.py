@@ -41,7 +41,7 @@ img_bala = pygame.image.load("bala.png")
 bala_x = 0
 bala_x_cambio = 0
 bala_y = 536
-bala_y_cambio = 1
+bala_y_cambio = 0.7
 bala_visible = False
 
 
@@ -51,7 +51,7 @@ enemigo_x = []
 enemigo_x_cambio = [] 
 enemigo_y = [] 
 enemigo_y_cambio = [] 
-cantidad_enemigos = 8
+cantidad_enemigos = 20
 
 # Texto Puntaje
 puntaje = 0
@@ -74,11 +74,11 @@ def mostrar_puntaje(x, y):
 
 
 for e in range(cantidad_enemigos):
-    img_enemigo.append(pygame.image.load("aulab.png"))
+    img_enemigo.append(pygame.image.load("enemigos.png"))
     enemigo_x.append(random.randint(0, 736)) 
-    enemigo_x_cambio.append(0.4) 
+    enemigo_x_cambio.append(0.7) 
     enemigo_y.append(random.randint(50, 200)) 
-    enemigo_y_cambio.append(20) 
+    enemigo_y_cambio.append(55) 
 
 def jugador(x, y):
     pantalla.blit(img_jugador, (x, y))
@@ -122,13 +122,13 @@ while se_ejecuta:
         # Evento Presionar
         if e.type == pygame.KEYDOWN:
             if e.key == pygame.K_LEFT:
-                jugador_x_cambio = -0.3
+                jugador_x_cambio = -0.6
             if e.key == pygame.K_RIGHT:
-                jugador_x_cambio = 0.3
+                jugador_x_cambio = 0.6
             if e.key == pygame.K_UP:
-                jugador_y_cambio = -0.3
+                jugador_y_cambio = -0.6
             if e.key == pygame.K_DOWN:
-                jugador_y_cambio = 0.3
+                jugador_y_cambio = 0.6
             if e.key == pygame.K_SPACE:
                 sonido_bala = mixer.Sound("disparo.mp3")
                 sonido_bala.set_volume(0.3)
@@ -196,6 +196,8 @@ while se_ejecuta:
                 sonido_colision.play()
                 balas.remove(bala)
                 puntaje += 1
+                if puntaje > 20:
+                    cantidad_enemigos = 20 
                 enemigo_x[e] = random.randint(0, 736)
                 enemigo_y[e] = random.randint(20, 200)
                 break
@@ -221,7 +223,6 @@ while se_ejecuta:
             balas.remove(bala)
     
     
-
 
     # Coloca a las entidades
     jugador(jugador_x, jugador_y)
