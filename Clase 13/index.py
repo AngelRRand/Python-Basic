@@ -166,6 +166,8 @@ def pedir_cosas():
                 continue
         elif "adiós" in pedido:
             hablar("Me voy a descansar, cualquier cosa me avisas")
+            break
+
 
 
 pedir_cosas()
